@@ -23,12 +23,13 @@ html::before {
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
+    text-rendering: geometricPrecision;
 }
 
 h1,
 h2,
 h3,
-h4,
+h4, 
 h5,
 h6 {
     color: var(--col-neutral-dark-grayish-blue);
@@ -42,20 +43,20 @@ p {
 }
 
 .main {
-    /* display: flex; */
-    /* flex-direction: column; */
-
     font-family: var(--font-family);
+    overflow: hidden;
 }
 
 .header-container {
     display: flex;
     justify-content: center;
     
-    width: 100%;
+    background-image: url("/images/bg-header-desktop.png");
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100vw;
     height: 80vh;
-    background-image: url("images/bg-header-desktop.png");
-    background-position: center;
 }
 
 .main-container {
@@ -67,6 +68,7 @@ p {
     text-align: center;
     width: 40rem;
 }
+
 
 .main-container h1 {
     font-size: 2.5em;
@@ -93,6 +95,16 @@ p {
     font-size: 1.2em;
     border-radius: 50px;
     border: none;
+}
+
+.lightgreen-btn:hover {
+    background-color: hsl(171, 66%, 50%);
+    transition: 0.3s all ease 0s;
+}
+
+.purple-btn:hover {
+    background-color: hsl(233, 100%, 75%);;
+    transition: 0.3s all ease 0s;
 }
 
 
@@ -132,16 +144,18 @@ p {
 
 .product-info {
     display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 8rem;
+    gap: 6rem;
 
+    min-width: 70rem;
+    max-width: 100%;
+    width: 100%;
     margin-top: 8rem;
     margin-bottom: 4rem;
+    margin-left: -32rem;
 }
 
-.mac-img img {
-    margin-left: -30rem;
-}
 
 .product-desc-container {
     width: 25rem;
@@ -166,6 +180,11 @@ p {
     text-align: center;
 }
 
+.product-devices img {
+    width: 100%;
+    max-width: 70rem;
+}
+
 .product-devices p {
     width: 40rem;
 }
@@ -182,17 +201,25 @@ p {
 
 .product-workflow__card {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: row;
+    align-items: stretch;
+    flex-direction: row;
+    flex-wrap: wrap;
     gap: 1rem;
 
+    width: 100%;
+    max-width: 70rem;
     text-align: center;
-    width: 70rem;
     margin-top: 6rem;
 }
 
 .card {
     flex: 1;
+    padding: 0 1rem;
+}
+
+.card svg {
+    margin-bottom: 2rem;
 }
 
 .our-clients {
@@ -207,38 +234,40 @@ p {
 }
 
 .call-to-action {
-    display: flex;
+    width: 100%;
+    max-width: 40rem;
     margin: 0 auto;
-    align-items: center;
-    flex-direction: column;
-    width: 40rem;
+    text-align: center;
+
     padding: 8rem 0;
 }
+
 
 .footer {
     display: flex;
     justify-content: center;
-    width: 100%;
+    align-items: baseline;
     background-color: #F5F6F8;
-    padding: 2rem 0
 }
 
 .footer-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-direction: row;
+    gap: 2rem;
+
     width: 80%;
+    padding: 2rem 0;
 }
 
 .footer-links {
     display: flex;
-    gap: 2rem;
+    gap: 6rem;
 }
 
 .footer-links li {
     list-style-type: none;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 .footer-links li a {
@@ -246,5 +275,91 @@ p {
     color: var(--col-neutral-dark-grayish-blue);
 }
 
-.footer-logo {
+.footer-links li a:hover {
+    color: var(--col-primary-cyan);
+}
+
+.socials {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.socials path:hover {
+    fill: var(--col-primary-cyan);
+}
+
+@media screen and (max-width: 820px) {
+    /* .main {
+        padding: 0 4rem;
+    } */
+
+    .main-container h1 {
+        font-size: 3.2em;
+    }
+
+    .main-container p {
+        font-size: 1.4em;
+    }
+
+    .product-info {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        margin: 0;
+        width: 100%;
+    }
+
+    .title-intro h2 {
+        font-size: 2.6em;
+    }
+
+    .title-intro p {
+        font-size: 1.4em;
+        margin-bottom: 5rem;
+    }
+
+    .product-desc {
+        text-align: center;
+        margin-bottom: 6rem;
+    }
+
+    .product-desc h3 {
+        font-size: 2.3em;
+    }
+
+    .product-desc p {
+        font-size: 1.4em;
+    }
+
+    .product-devices h2 {
+        font-size: 2.6em;
+    }
+
+    .product-devices p {
+        font-size: 1.4em;
+    }
+
+    .product-workflow h2 {
+        font-size: 2.6em;
+        margin-top: 4rem;
+        text-align: center;
+    }
+
+    .product-workflow p {
+        font-size: 1.4em;
+        text-align: center;
+    }
+
+    .call-to-action h2 {
+        text-align: center;
+        font-size: 2.6em;
+        margin-top: 4rem;
+    }
+
+    .call-to-action p {
+        text-align: center;
+        font-size: 1.4em;
+    }
 }
